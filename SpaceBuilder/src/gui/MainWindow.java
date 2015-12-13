@@ -126,27 +126,28 @@ public class MainWindow extends JFrame {
 		
 		Component verticalGlue_5 = Box.createVerticalGlue();
 		verticalBox.add(verticalGlue_5);
-		
-		JRadioButton rdbtnItem6 = new JRadioButton("New radio button");
+
+
+		url = MainWindow.class.getResource("/images/base.jpg");
+		imgPath = url.toString();
+		html = "<html><body><img src='" + imgPath + "' width=50 height=50>";
+		JRadioButton rdbtnItem6 = new JRadioButton(html);
 		verticalBox.add(rdbtnItem6);
 		rdbtnItem6.setActionCommand("Item6");
 		
 		Component verticalGlue_6 = Box.createVerticalGlue();
 		verticalBox.add(verticalGlue_6);
-		
-		JRadioButton rdbtnItem7 = new JRadioButton("New radio button");
+
+
+		url = MainWindow.class.getResource("/images/finalExit.jpg");
+		imgPath = url.toString();
+		html = "<html><body><img src='" + imgPath + "' width=50 height=50>";
+		JRadioButton rdbtnItem7 = new JRadioButton(html);
 		verticalBox.add(rdbtnItem7);
 		rdbtnItem7.setActionCommand("Item7");
 		
 		Component verticalGlue_7 = Box.createVerticalGlue();
 		verticalBox.add(verticalGlue_7);
-		
-		JRadioButton rdbtnItem8 = new JRadioButton("New radio button");
-		verticalBox.add(rdbtnItem8);
-		rdbtnItem8.setActionCommand("Item8");
-		
-		Component verticalGlue_8 = Box.createVerticalGlue();
-		verticalBox.add(verticalGlue_8);
 		
 		//Group the radio buttons.
 	    ButtonGroup group = new ButtonGroup();
@@ -157,7 +158,6 @@ public class MainWindow extends JFrame {
 	    group.add(rdbtnItem5);
 	    group.add(rdbtnItem6);
 	    group.add(rdbtnItem7);
-	    group.add(rdbtnItem8);
 
 		//Create the settings panel for the gameboard
 		JPanel settingsPane = new JPanel();
@@ -217,7 +217,6 @@ public class MainWindow extends JFrame {
 	    rdbtnItem5.addActionListener(space);
 	    rdbtnItem6.addActionListener(space);
 	    rdbtnItem7.addActionListener(space);
-	    rdbtnItem8.addActionListener(space);
 	    
 	    
 	    space.setFocusable(true);

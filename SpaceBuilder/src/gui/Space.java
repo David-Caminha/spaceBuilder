@@ -37,7 +37,7 @@ public class Space extends JPanel implements MouseListener, ActionListener {
 
 	SpaceLogic spaceLogic = new SpaceLogic();
 
-	Image imgCover, imgWall, imgFloor, imgWandererAgent, imgExit, imgObstacle;
+	Image imgCover, imgWall, imgFloor, imgWandererAgent, imgExit, imgObstacle, imgFinalExit, imgBase;
 
 	private boolean creating = false;
 
@@ -84,6 +84,16 @@ public class Space extends JPanel implements MouseListener, ActionListener {
 		}
 		try {
 			imgObstacle = ImageIO.read(new File("resources\\images\\obstacle.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			imgFinalExit = ImageIO.read(new File("resources\\images\\finalExit.jpg"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		try {
+			imgBase = ImageIO.read(new File("resources\\images\\base.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -148,6 +158,12 @@ public class Space extends JPanel implements MouseListener, ActionListener {
 						break;
 					case 'O':
 						g.drawImage(imgObstacle, j*wScale, i*hScale, wScale, hScale, null);
+						break;
+					case 'B':
+						g.drawImage(imgBase, j*wScale, i*hScale, wScale, hScale, null);
+						break;
+					case 'F':
+						g.drawImage(imgFinalExit, j*wScale, i*hScale, wScale, hScale, null);
 						break;
 					}
 				}
@@ -218,6 +234,12 @@ public class Space extends JPanel implements MouseListener, ActionListener {
 					break;
 				case 5:
 					spaceLogic.setChar(ys, xs, ' ');
+					break;
+				case 6:
+					spaceLogic.setChar(ys, xs, 'B');
+					break;
+				case 7:
+					spaceLogic.setChar(ys, xs, 'F');
 					break;
 				}
 				repaint();
@@ -388,6 +410,14 @@ public class Space extends JPanel implements MouseListener, ActionListener {
 		if ("Item5".equals(e.getActionCommand()))
 		{
 			objectType = 5;
+		}
+		if ("Item6".equals(e.getActionCommand()))
+		{
+			objectType = 6;
+		}
+		if ("Item7".equals(e.getActionCommand()))
+		{
+			objectType = 7;
 		}
 		repaint();
 	}
