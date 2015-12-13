@@ -1,0 +1,15 @@
+height: 10
+width: 10
+    X     
+          
+  W       
+          
+    W     
+          
+        W 
+          
+          
+    X     
+pos:2 2;force:5.0;panic:0.0;health:5.0;speed:0.5;aggressiveness:1.0
+pos:4 4;force:3.0;panic:1.0;health:5.0;speed:0.5;aggressiveness:1.0
+pos:8 6;force:3.0;panic:0.0;health:5.0;speed:1.0;aggressiveness:1.0
